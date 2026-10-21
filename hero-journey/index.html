@@ -23,6 +23,7 @@ summary::-webkit-details-marker{display:none}
 details[open] .faq-plus{transform:rotate(45deg)}
 dialog::backdrop{background:rgba(10,10,10,.78);backdrop-filter:blur(3px)}
 #offer-dialog input:focus,#offer-dialog select:focus{outline:2px solid #D4A843;outline-offset:1px}
+#consent[hidden]{display:none!important}
 </style>
 <script defer src="/_vercel/insights/script.js"></script>
 </head>
@@ -646,10 +647,31 @@ dialog::backdrop{background:rgba(10,10,10,.78);backdrop-filter:blur(3px)}
     fetch('/api/request',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)})
       .then(function(r){ return r.json().catch(function(){ return {ok:false}; }); })
       .then(function(j){
-        if(j && j.ok){ f.hidden=true; intro.hidden=true; t.hidden=false; }
+        if(j && j.ok){ f.hidden=true; intro.hidden=true; t.hidden=false; if(window.hjTrackLead) window.hjTrackLead(); }
         else { s.innerHTML=fallback; b.disabled=false; b.textContent='Request an offer'; }
       })
       .catch(function(){ s.innerHTML=fallback; b.disabled=false; b.textContent='Request an offer'; });
+  });
+})();
+</script>
+<div id="consent" role="dialog" aria-label="Cookie consent" hidden style="position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 50; max-width: 760px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 14px 24px; align-items: center; justify-content: space-between; padding: 20px 24px; background: #141412; border: 1px solid #3A3222; border-radius: 2px; font-family: 'DM Sans', system-ui, sans-serif; box-shadow: 0 12px 40px rgba(0,0,0,0.5)"><p style="margin: 0; flex: 1 1 320px; color: #D9D4C8; font-size: 15px; line-height: 1.5">We use cookies from Meta to measure our ads and show this programme to the right people. You can say no, and the page works the same.</p><div style="display: flex; gap: 10px"><button type="button" data-consent="no" style="min-height: 44px; padding: 0 20px; background: transparent; border: 1px solid #5A4A22; color: #F9F8F6; font-family: inherit; font-size: 15px; border-radius: 2px; cursor: pointer">Decline</button><button type="button" data-consent="yes" style="min-height: 44px; padding: 0 20px; background: #BC8F2A; border: 0; color: #0A0A0A; font-weight: 600; font-family: inherit; font-size: 15px; border-radius: 2px; cursor: pointer">Accept</button></div></div>
+<script>
+(function(){
+  var KEY='hj-consent', PIXEL='1581920248505131', loaded=false;
+  function get(){ try { return localStorage.getItem(KEY); } catch(e){ return null; } }
+  function set(v){ try { localStorage.setItem(KEY, v); } catch(e){} }
+  function loadPixel(){
+    if(loaded) return; loaded=true;
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', PIXEL); fbq('track', 'PageView');
+  }
+  window.hjTrackLead=function(){ if(loaded && window.fbq) fbq('track','Lead',{content_name:"Hero's Journey offer request"}); };
+  var banner=document.getElementById('consent'), c=get();
+  if(c==='yes') loadPixel();
+  else if(c!=='no' && banner) banner.hidden=false;
+  if(banner) banner.addEventListener('click', function(e){
+    var v=e.target && e.target.getAttribute('data-consent'); if(!v) return;
+    set(v); banner.hidden=true; if(v==='yes') loadPixel();
   });
 })();
 </script>
