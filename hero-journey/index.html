@@ -21,6 +21,8 @@ a{color:#D4A843}a:hover{color:#F9F8F6}
 summary{cursor:pointer;list-style:none}
 summary::-webkit-details-marker{display:none}
 details[open] .faq-plus{transform:rotate(45deg)}
+dialog::backdrop{background:rgba(10,10,10,.78);backdrop-filter:blur(3px)}
+#offer-dialog input:focus,#offer-dialog select:focus{outline:2px solid #D4A843;outline-offset:1px}
 </style>
 </head>
 <body>
@@ -38,7 +40,7 @@ details[open] .faq-plus{transform:rotate(45deg)}
 <a href="#day" style="color: #E6E1D6; text-decoration: none">The day</a>
 <a href="#ai" style="color: #E6E1D6; text-decoration: none">AI assistants</a>
 <a href="#faq" style="color: #E6E1D6; text-decoration: none">FAQ</a>
-<a href="#offer" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 20px; border-radius: 2px; background: #BC8F2A; color: #0A0A0A; font-weight: 600; text-decoration: none">Request an offer</a>
+<a href="#offer" data-offer-open="" style="display: inline-flex; align-items: center; min-height: 44px; padding: 0 20px; border-radius: 2px; background: #BC8F2A; color: #0A0A0A; font-weight: 600; text-decoration: none">Request an offer</a>
 </nav>
 </div>
 </header>
@@ -49,7 +51,7 @@ details[open] .faq-plus{transform:rotate(45deg)}
 <h1 style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: clamp(42px, 6.4vw, 92px); line-height: 1.04; letter-spacing: -0.015em; max-width: 1050px">Your company has a big goal for 2027.<br><em style="font-style: italic; font-weight: 400; color: #D4A843">Does your team have what it takes?</em></h1>
 <p style="margin: 36px 0 0; max-width: 680px; font-size: 20px; line-height: 1.6; color: #D9D4C8">A 6-hour in-house event that starts a 60-day journey. Your salespeople find their own road to the goal, learn to turn rejection into progress, and keep going after the trainer leaves, with an AI assistant at their side and their manager as mentor.</p>
 <div style="margin-top: 44px; display: flex; flex-wrap: wrap; gap: 14px">
-<a href="#offer" style="display: inline-flex; align-items: center; min-height: 54px; padding: 0 30px; background: #BC8F2A; color: #0A0A0A; font-weight: 600; font-size: 17px; text-decoration: none; border-radius: 2px">Request an offer</a>
+<a href="#offer" data-offer-open="" style="display: inline-flex; align-items: center; min-height: 54px; padding: 0 30px; background: #BC8F2A; color: #0A0A0A; font-weight: 600; font-size: 17px; text-decoration: none; border-radius: 2px">Request an offer</a>
 <a href="#how" style="display: inline-flex; align-items: center; min-height: 54px; padding: 0 30px; border: 1px solid #5A4A22; color: #F9F8F6; font-weight: 500; font-size: 17px; text-decoration: none; border-radius: 2px">See how it works</a>
 </div>
 <div style="margin-top: 88px; display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 0; border-top: 1px solid #2A261C">
@@ -590,16 +592,7 @@ details[open] .faq-plus{transform:rotate(45deg)}
 <p style="margin: 0 0 28px; font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; color: #D4A843; font-weight: 600">The call to adventure</p>
 <h2 id="offer-h" style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: clamp(38px, 5.4vw, 74px); line-height: 1.06">Give your team a new year that doesn't fade by February.</h2>
 <p style="margin: 32px auto 0; max-width: 600px; font-size: 19px; color: #D9D4C8">One conversation is enough to see whether this fits your team and your goal.</p>
-<form id="offer-form" action="/api/request" method="post" style="margin: 48px auto 0; max-width: 760px; text-align: left; display: flex; flex-direction: column; gap: 20px">
-<div style="display: flex; flex-wrap: wrap; gap: 20px"><div style="flex: 1 1 260px"><label for="f-name" style="display: block; margin-bottom: 8px; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: #B9B4A8">Name</label><input id="f-name" name="name" type="text" required autocomplete="name" maxlength="160" style="width: 100%; box-sizing: border-box; min-height: 52px; padding: 12px 14px; background: #141412; border: 1px solid #3A3222; border-radius: 2px; color: #F9F8F6; font-family: inherit; font-size: 16px"></div><div style="flex: 1 1 260px"><label for="f-role" style="display: block; margin-bottom: 8px; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: #B9B4A8">Role</label><input id="f-role" name="role" type="text" autocomplete="organization-title" maxlength="160" style="width: 100%; box-sizing: border-box; min-height: 52px; padding: 12px 14px; background: #141412; border: 1px solid #3A3222; border-radius: 2px; color: #F9F8F6; font-family: inherit; font-size: 16px"></div></div>
-<div style="display: flex; flex-wrap: wrap; gap: 20px"><div style="flex: 1 1 260px"><label for="f-company" style="display: block; margin-bottom: 8px; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: #B9B4A8">Company</label><input id="f-company" name="company" type="text" required autocomplete="organization" maxlength="160" style="width: 100%; box-sizing: border-box; min-height: 52px; padding: 12px 14px; background: #141412; border: 1px solid #3A3222; border-radius: 2px; color: #F9F8F6; font-family: inherit; font-size: 16px"></div><div style="flex: 1 1 260px"><label for="f-teamSize" style="display: block; margin-bottom: 8px; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: #B9B4A8">Sales team size</label><select id="f-teamSize" name="teamSize" required style="width: 100%; box-sizing: border-box; min-height: 52px; padding: 12px 14px; background: #141412; border: 1px solid #3A3222; border-radius: 2px; color: #F9F8F6; font-family: inherit; font-size: 16px"><option value="">Choose</option><option value="1–5">1–5</option><option value="6–10">6–10</option><option value="11–20">11–20</option><option value="21–30">21–30</option><option value="30+">30+</option></select></div></div>
-<div style="display: flex"><div style="flex: 1 1 260px"><label for="f-contact" style="display: block; margin-bottom: 8px; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: #B9B4A8">Email or phone</label><input id="f-contact" name="contact" type="text" required autocomplete="email" maxlength="160" style="width: 100%; box-sizing: border-box; min-height: 52px; padding: 12px 14px; background: #141412; border: 1px solid #3A3222; border-radius: 2px; color: #F9F8F6; font-family: inherit; font-size: 16px"></div></div>
-<div aria-hidden="true" style="position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden"><label for="f-website">Website</label><input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
-<div style="display: flex; flex-wrap: wrap; gap: 14px; align-items: center; margin-top: 8px"><button id="offer-submit" type="submit" style="display: inline-flex; align-items: center; min-height: 56px; padding: 0 32px; background: #BC8F2A; color: #0A0A0A; font-weight: 600; font-size: 17px; border: 0; border-radius: 2px; cursor: pointer; font-family: inherit">Request an offer</button><a href="https://calendly.com/edgars-7go/free-strategy-call" style="display: inline-flex; align-items: center; min-height: 56px; padding: 0 32px; border: 1px solid #5A4A22; color: #F9F8F6; font-weight: 500; font-size: 17px; text-decoration: none; border-radius: 2px">Or book a free discovery call</a></div>
-<p id="offer-status" role="status" aria-live="polite" style="margin: 0; min-height: 24px; color: #D9D4C8; font-size: 15px"></p>
-<p style="margin: 0; color: #8F8A7E; font-size: 13px">Your details are used only to reply to this request.</p>
-</form>
-<div id="offer-thanks" hidden style="margin: 48px auto 0; max-width: 640px; border: 1px solid #5A4A22; padding: 40px"><p style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-size: 30px; color: #D4A843">Thank you. Your journey has begun.</p><p style="margin: 16px 0 0; color: #D9D4C8">Edgars will be in touch shortly. Want to talk sooner?</p><a href="https://calendly.com/edgars-7go/free-strategy-call" style="display: inline-flex; align-items: center; min-height: 52px; margin-top: 24px; padding: 0 28px; background: #BC8F2A; color: #0A0A0A; font-weight: 600; text-decoration: none; border-radius: 2px">Book a free discovery call</a></div>
+<div style="margin-top: 48px; display: flex; flex-wrap: wrap; gap: 14px; justify-content: center"><a href="#offer" data-offer-open="" style="display: inline-flex; align-items: center; min-height: 56px; padding: 0 32px; background: #BC8F2A; color: #0A0A0A; font-weight: 600; font-size: 17px; text-decoration: none; border-radius: 2px">Request an offer</a><a href="https://calendly.com/edgars-7go/free-strategy-call" style="display: inline-flex; align-items: center; min-height: 56px; padding: 0 32px; border: 1px solid #5A4A22; color: #F9F8F6; font-weight: 500; font-size: 17px; text-decoration: none; border-radius: 2px">Book a free discovery call</a></div>
 
 <p style="margin: 48px 0 0; color: #B9B4A8; font-size: 15px"><a href="https://www.ccgroup.lv" style="color: #D4A843">www.ccgroup.lv</a> · <a href="mailto:edgars@ccgroup.lv" style="color: #D4A843">edgars@ccgroup.lv</a> · <a href="tel:+37127722408" style="color: #D4A843">+371 27722408</a></p>
 </div>
@@ -613,20 +606,44 @@ details[open] .faq-plus{transform:rotate(45deg)}
 </footer>
 
 </div>
+<dialog id="offer-dialog" aria-labelledby="offer-dialog-h" style="width: min(720px, calc(100vw - 32px)); max-height: calc(100vh - 32px); overflow: auto; box-sizing: border-box; margin: auto; padding: 44px 40px; background: #0A0A0A; color: #F9F8F6; border: 1px solid #5A4A22; border-radius: 2px; font-family: 'DM Sans', system-ui, sans-serif">
+<button type="button" data-offer-close="" aria-label="Close" style="position: absolute; top: 12px; right: 12px; width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center; background: transparent; border: 0; color: #B9B4A8; cursor: pointer"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+<div id="offer-intro"><p style="margin: 0 0 12px; font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; color: #D4A843; font-weight: 600">Request an offer</p><h2 id="offer-dialog-h" style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: clamp(28px, 4vw, 40px); line-height: 1.15">Start your team's journey.</h2><p style="margin: 14px 0 0; color: #D9D4C8">Five quick details. Edgars replies personally.</p></div>
+<form id="offer-form" action="/api/request" method="post" style="margin: 28px 0 0; text-align: left; display: flex; flex-direction: column; gap: 20px">
+<div style="display: flex; flex-wrap: wrap; gap: 20px"><div style="flex: 1 1 260px"><label for="f-name" style="display: block; margin-bottom: 8px; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: #B9B4A8">Name</label><input id="f-name" name="name" type="text" required autocomplete="name" maxlength="160" style="width: 100%; box-sizing: border-box; min-height: 52px; padding: 12px 14px; background: #141412; border: 1px solid #3A3222; border-radius: 2px; color: #F9F8F6; font-family: inherit; font-size: 16px"></div><div style="flex: 1 1 260px"><label for="f-role" style="display: block; margin-bottom: 8px; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: #B9B4A8">Role</label><input id="f-role" name="role" type="text" autocomplete="organization-title" maxlength="160" style="width: 100%; box-sizing: border-box; min-height: 52px; padding: 12px 14px; background: #141412; border: 1px solid #3A3222; border-radius: 2px; color: #F9F8F6; font-family: inherit; font-size: 16px"></div></div>
+<div style="display: flex; flex-wrap: wrap; gap: 20px"><div style="flex: 1 1 260px"><label for="f-company" style="display: block; margin-bottom: 8px; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: #B9B4A8">Company</label><input id="f-company" name="company" type="text" required autocomplete="organization" maxlength="160" style="width: 100%; box-sizing: border-box; min-height: 52px; padding: 12px 14px; background: #141412; border: 1px solid #3A3222; border-radius: 2px; color: #F9F8F6; font-family: inherit; font-size: 16px"></div><div style="flex: 1 1 260px"><label for="f-teamSize" style="display: block; margin-bottom: 8px; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: #B9B4A8">Sales team size</label><select id="f-teamSize" name="teamSize" required style="width: 100%; box-sizing: border-box; min-height: 52px; padding: 12px 14px; background: #141412; border: 1px solid #3A3222; border-radius: 2px; color: #F9F8F6; font-family: inherit; font-size: 16px"><option value="">Choose</option><option value="1–5">1–5</option><option value="6–10">6–10</option><option value="11–20">11–20</option><option value="21–30">21–30</option><option value="30+">30+</option></select></div></div>
+<div style="display: flex"><div style="flex: 1 1 260px"><label for="f-contact" style="display: block; margin-bottom: 8px; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: #B9B4A8">Email or phone</label><input id="f-contact" name="contact" type="text" required autocomplete="email" maxlength="160" style="width: 100%; box-sizing: border-box; min-height: 52px; padding: 12px 14px; background: #141412; border: 1px solid #3A3222; border-radius: 2px; color: #F9F8F6; font-family: inherit; font-size: 16px"></div></div>
+<div aria-hidden="true" style="position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden"><label for="f-website">Website</label><input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+<div style="display: flex; flex-wrap: wrap; gap: 14px; align-items: center; margin-top: 8px"><button id="offer-submit" type="submit" style="display: inline-flex; align-items: center; min-height: 56px; padding: 0 32px; background: #BC8F2A; color: #0A0A0A; font-weight: 600; font-size: 17px; border: 0; border-radius: 2px; cursor: pointer; font-family: inherit">Request an offer</button><a href="https://calendly.com/edgars-7go/free-strategy-call" style="display: inline-flex; align-items: center; min-height: 56px; padding: 0 32px; border: 1px solid #5A4A22; color: #F9F8F6; font-weight: 500; font-size: 17px; text-decoration: none; border-radius: 2px">Or book a free discovery call</a></div>
+<p id="offer-status" role="status" aria-live="polite" style="margin: 0; min-height: 24px; color: #D9D4C8; font-size: 15px"></p>
+<p style="margin: 0; color: #8F8A7E; font-size: 13px">Your details are used only to reply to this request.</p>
+</form>
+<div id="offer-thanks" hidden style="margin: 8px 0 0; text-align: left"><p style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-size: 30px; color: #D4A843">Thank you. Your journey has begun.</p><p style="margin: 16px 0 0; color: #D9D4C8">Edgars will be in touch shortly. Want to talk sooner?</p><a href="https://calendly.com/edgars-7go/free-strategy-call" style="display: inline-flex; align-items: center; min-height: 52px; margin-top: 24px; padding: 0 28px; background: #BC8F2A; color: #0A0A0A; font-weight: 600; text-decoration: none; border-radius: 2px">Book a free discovery call</a></div>
+</dialog>
 <script>
 (function(){
-  var f=document.getElementById('offer-form'); if(!f) return;
-  var s=document.getElementById('offer-status'), b=document.getElementById('offer-submit'), t=document.getElementById('offer-thanks');
+  var d=document.getElementById('offer-dialog'), f=document.getElementById('offer-form');
+  if(!d||!f) return;
+  var s=document.getElementById('offer-status'), b=document.getElementById('offer-submit'), t=document.getElementById('offer-thanks'), intro=document.getElementById('offer-intro');
+  var canModal=typeof d.showModal==='function';
+  function open(e){
+    if(!canModal) return; // old browsers: the link scrolls to the offer section
+    e.preventDefault(); d.showModal();
+    var first=document.getElementById('f-name'); if(first && !f.hidden) first.focus();
+  }
+  document.querySelectorAll('[data-offer-open]').forEach(function(a){ a.addEventListener('click',open); });
+  document.querySelectorAll('[data-offer-close]').forEach(function(x){ x.addEventListener('click',function(){ d.close(); }); });
+  d.addEventListener('click',function(e){ if(e.target===d) d.close(); });
   var fallback='Something went wrong. Please email <a href="mailto:edgars@ccgroup.lv" style="color:#D4A843">edgars@ccgroup.lv</a> or call <a href="tel:+37127722408" style="color:#D4A843">+371 27722408</a>.';
   f.addEventListener('submit', function(e){
     e.preventDefault();
     if(!f.reportValidity()) return;
-    var d={}; new FormData(f).forEach(function(v,k){ d[k]=v; });
+    var data={}; new FormData(f).forEach(function(v,k){ data[k]=v; });
     b.disabled=true; b.textContent='Sending…'; s.textContent='';
-    fetch('/api/request',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)})
+    fetch('/api/request',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)})
       .then(function(r){ return r.json().catch(function(){ return {ok:false}; }); })
       .then(function(j){
-        if(j && j.ok){ f.hidden=true; t.hidden=false; t.scrollIntoView({behavior:'smooth',block:'center'}); }
+        if(j && j.ok){ f.hidden=true; intro.hidden=true; t.hidden=false; }
         else { s.innerHTML=fallback; b.disabled=false; b.textContent='Request an offer'; }
       })
       .catch(function(){ s.innerHTML=fallback; b.disabled=false; b.textContent='Request an offer'; });
