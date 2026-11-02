@@ -34,14 +34,16 @@ dialog::backdrop{background:rgba(10,10,10,.78);backdrop-filter:blur(3px)}
 #offer-dialog input:focus,#offer-dialog select:focus{outline:2px solid #D4A843;outline-offset:1px}
 #consent[hidden]{display:none!important}
 .hj-stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0 40px }
-.hj-stat { border-top: 1px solid #3A3222; padding-top: 28px }
-.hj-stat-n { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(34px, 3.2vw, 44px); color: #D4A843; line-height: 1; white-space: nowrap }
+.hj-stat { border-top: 1px solid #3A3222; padding-top: 24px; min-width: 0 }
+.hj-stat-n { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(30px, 2.7vw, 40px); color: #D4A843; line-height: 1.1; white-space: nowrap }
+.hj-stat-n + div { margin-top: 14px !important }
 @media (max-width: 900px) { .hj-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px 32px } }
 @media (max-width: 520px) { .hj-stats { grid-template-columns: 1fr; gap: 28px } }
-.hj-story { max-width: 1120px; margin: 0 auto; display: grid; grid-template-columns: minmax(0, 360px) minmax(0, 1fr); gap: 72px; align-items: start }
+.hj-story { max-width: 1120px; margin: 0 auto; display: grid; grid-template-columns: minmax(0, 360px) minmax(0, 1fr); gap: 0 72px; align-items: start }
 .hj-story-img { margin: 0 }
 .hj-story-img img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 25%; display: block; height: auto; border: 1px solid #3A3222 }
 .hj-story-text { max-width: 760px }
+.hj-story-quote { grid-column: 1 / -1; margin-top: 64px; padding-top: 64px; border-top: 1px solid #3A3222; text-align: center }
 @media (max-width: 900px) { .hj-story { grid-template-columns: 1fr; gap: 40px } .hj-story-img { max-width: 240px } }
 </style>
 <script defer src="/_vercel/insights/script.js"></script>
@@ -146,8 +148,10 @@ dialog::backdrop{background:rgba(10,10,10,.78);backdrop-filter:blur(3px)}
 <p style="margin: 0">Вопрос не в том, встретят ли они дракона. Встретят.</p>
 <p style="margin: 0">Вопрос в том, кто в этот момент будет рядом.</p>
 </div>
-<p style="margin: 56px 0 0; font-family: 'Playfair Display', Georgia, serif; font-size: clamp(26px, 3vw, 36px); line-height: 1.35; color: #D4A843; font-style: italic; border-top: 1px solid #3A3222; padding-top: 40px">Каждое «нет» — часть истории. Та самая часть, где рождаются герои.</p>
-<p style="margin: 24px 0 0; color: #B9B4A8; font-size: 15px; letter-spacing: 0.06em">— Эдгарс Унталс</p>
+</div>
+<div class="hj-story-quote">
+<p style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-size: clamp(30px, 4.2vw, 60px); line-height: 1.2; color: #D4A843; font-style: italic">Каждое «нет» — часть истории. Та самая часть, где рождаются герои.</p>
+<p style="margin: 28px 0 0; color: #B9B4A8; font-size: 15px; letter-spacing: 0.06em">— Эдгарс Унталс</p>
 </div>
 </div>
 </section>
