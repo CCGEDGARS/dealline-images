@@ -58,33 +58,61 @@ dialog::backdrop{background:rgba(10,10,10,.78);backdrop-filter:blur(3px)}
 </div>
 </header>
 
-<section id="top" style="position: relative; overflow: hidden; padding: 112px 24px 96px; background: #0A0A0A">
-<img src="https://hero.ccgroup.lv/hero-team.jpg" alt="" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 30%; opacity: 0.14; pointer-events: none">
+<style>
+  .hj-path { list-style: none; margin: 40px 0 0; padding: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 0; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #B9B4A8; font-weight: 600 }
+  .hj-path li { display: inline-flex; align-items: center; opacity: 0; animation: hjIn 520ms ease forwards }
+  .hj-path .hj-dot { width: 7px; height: 7px; border-radius: 50%; background: #D4A843; margin-right: 10px; flex: 0 0 auto }
+  .hj-path .hj-sep { width: 28px; height: 1px; background: #5A4A22; margin: 0 12px; flex: 0 0 auto }
+  .hj-path li:last-child { color: #D4A843 }
+  @keyframes hjIn { from { opacity: 0; transform: translateY(4px) } to { opacity: 1; transform: none } }
+  @media (prefers-reduced-motion: reduce) { .hj-path li { animation: none; opacity: 1 } }
+  @media (max-width: 640px) { .hj-path { font-size: 12px; letter-spacing: 0.1em } .hj-path .hj-sep { width: 14px; margin: 0 8px } }
+</style>
+<section id="top" style="color: #F9F8F6; font-family: 'DM Sans', system-ui, sans-serif; line-height: 1.6; position: relative; overflow: hidden; padding: 104px 24px 96px; background: #0A0A0A">
+<img src="https://hero.ccgroup.lv/hero-team-bw.jpg" alt="" aria-hidden="true" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 35%; opacity: 0.12; filter: grayscale(1); pointer-events: none">
 <div aria-hidden="true" style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,10,10,0.55) 0%, rgba(10,10,10,0.2) 45%, rgba(10,10,10,0.95) 100%); pointer-events: none"></div>
 <div style="position: relative; max-width: 1200px; margin: 0 auto">
-<p style="margin: 0 0 28px; font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; color: #D4A843; font-weight: 600">Путь героя · корпоративная программа для отделов B2B‑продаж</p>
-<h1 style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: clamp(42px, 6.4vw, 92px); line-height: 1.04; letter-spacing: -0.015em; max-width: 1050px">У вашей компании большая цель на 2027 год.<br><em style="font-style: italic; font-weight: 400; color: #D4A843">Готова ли к ней команда?</em></h1>
-<p style="margin: 36px 0 0; max-width: 680px; font-size: 20px; line-height: 1.6; color: #D9D4C8">Шесть часов тренинга в вашем офисе — и 60 дней пути после него. Каждый продавец находит свою дорогу к цели, учится превращать отказы в движение вперёд и не останавливается, когда тренер уезжает: рядом AI‑ассистент, а наставником становится руководитель.</p>
+
+<p style="margin: 0 0 32px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 20px">
+<span style="font-family: 'Playfair Display', Georgia, serif; font-size: clamp(30px, 3.6vw, 48px); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #D4A843; line-height: 1.1">Путь героя</span>
+<span style="font-size: 14px; letter-spacing: 0.2em; text-transform: uppercase; color: #B9B4A8; font-weight: 600">для&nbsp;отдела продаж</span>
+</p>
+
+<h1 style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: clamp(40px, 6vw, 86px); line-height: 1.04; letter-spacing: -0.015em; max-width: 1050px">У&nbsp;вашей компании амбициозные цели на&nbsp;2027&nbsp;год.<br><em style="font-style: italic; font-weight: 400; color: #D4A843">Готова ли к&nbsp;ним команда?</em></h1>
+
+<p style="margin: 36px 0 0; max-width: 700px; font-size: 20px; line-height: 1.6; color: #D9D4C8">Метод Роберта Дилтса, перенесённый в&nbsp;продажи: шесть часов тренинга в&nbsp;вашем офисе&nbsp;— и&nbsp;60 дней пути после него. Каждый продавец находит свою дорогу к&nbsp;цели и&nbsp;не&nbsp;останавливается, когда тренер уезжает: рядом AI‑ассистент, а&nbsp;наставником становится руководитель.</p>
+
 <div style="margin-top: 44px; display: flex; flex-wrap: wrap; gap: 14px">
-<a href="#offer" data-offer-open="" style="display: inline-flex; align-items: center; min-height: 54px; padding: 0 30px; background: #BC8F2A; color: #0A0A0A; font-weight: 600; font-size: 17px; text-decoration: none; border-radius: 2px">Запросить предложение</a>
+<a href="#offer" data-offer-open style="display: inline-flex; align-items: center; min-height: 54px; padding: 0 30px; background: #BC8F2A; color: #0A0A0A; font-weight: 600; font-size: 17px; text-decoration: none; border-radius: 2px">Запросить предложение</a>
 <a href="#how" style="display: inline-flex; align-items: center; min-height: 54px; padding: 0 30px; border: 1px solid #5A4A22; color: #F9F8F6; font-weight: 500; font-size: 17px; text-decoration: none; border-radius: 2px">Как это устроено</a>
 </div>
-<div style="margin-top: 88px; display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 0; border-top: 1px solid #2A261C">
+
+<ol class="hj-path" aria-label="Этапы пути героя">
+<li style="animation-delay: 150ms"><span class="hj-dot" aria-hidden="true"></span>Зов</li>
+<li style="animation-delay: 310ms"><span class="hj-sep" aria-hidden="true"></span><span class="hj-dot" aria-hidden="true"></span>Сомнение</li>
+<li style="animation-delay: 470ms"><span class="hj-sep" aria-hidden="true"></span><span class="hj-dot" aria-hidden="true"></span>Наставники</li>
+<li style="animation-delay: 630ms"><span class="hj-sep" aria-hidden="true"></span><span class="hj-dot" aria-hidden="true"></span>Демоны</li>
+<li style="animation-delay: 790ms"><span class="hj-sep" aria-hidden="true"></span><span class="hj-dot" aria-hidden="true"></span>Меч</li>
+<li style="animation-delay: 950ms"><span class="hj-sep" aria-hidden="true"></span><span class="hj-dot" aria-hidden="true"></span>Испытание</li>
+<li style="animation-delay: 1110ms"><span class="hj-sep" aria-hidden="true"></span><span class="hj-dot" aria-hidden="true"></span>Возвращение</li>
+</ol>
+
+<div style="margin-top: 80px; display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 0; border-top: 1px solid #2A261C">
 <div style="padding: 28px 24px 0 0">
 <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 44px; color: #D4A843; line-height: 1">6 часов</div>
-<div style="margin-top: 10px; color: #B9B4A8; font-size: 15px">Тренинг на вашей территории. Групповая работа, практикумы, ролевые игры, индивидуальная оценка.</div>
+<div style="margin-top: 10px; color: #B9B4A8; font-size: 15px">Тренинг на&nbsp;вашей территории. Групповая работа, практикумы, ролевые игры, индивидуальная оценка.</div>
 </div>
 <div style="padding: 28px 24px 0 0">
 <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 44px; color: #D4A843; line-height: 1">60 дней</div>
-<div style="margin-top: 10px; color: #B9B4A8; font-size: 15px">Сопровождение с AI‑ассистентом. Задания, практика, напоминания, прогресс.</div>
+<div style="margin-top: 10px; color: #B9B4A8; font-size: 15px">Сопровождение с&nbsp;AI‑ассистентом. Задания, практика, напоминания, прогресс.</div>
 </div>
 <div style="padding: 28px 24px 0 0">
 <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 44px; color: #D4A843; line-height: 1">2 наставника</div>
-<div style="margin-top: 10px; color: #B9B4A8; font-size: 15px">Ваш руководитель продаж, который знает дорогу. И тренер, который прошёл много похожих.</div>
+<div style="margin-top: 10px; color: #B9B4A8; font-size: 15px">Ваш руководитель продаж, который знает дорогу. И&nbsp;тренер, который прошёл много похожих.</div>
 </div>
 <div style="padding: 28px 24px 0 0">
 <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 44px; color: #D4A843; line-height: 1">1 отчёт</div>
-<div style="margin-top: 10px; color: #B9B4A8; font-size: 15px">«До» и «после». Для собственника, на 60‑й день.</div>
+<div style="margin-top: 10px; color: #B9B4A8; font-size: 15px">«До» и&nbsp;«после». Для&nbsp;собственника, на&nbsp;60‑й день.</div>
 </div>
 </div>
 </div>
