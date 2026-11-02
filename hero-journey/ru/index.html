@@ -33,6 +33,11 @@ details[open] .faq-plus{transform:rotate(45deg)}
 dialog::backdrop{background:rgba(10,10,10,.78);backdrop-filter:blur(3px)}
 #offer-dialog input:focus,#offer-dialog select:focus{outline:2px solid #D4A843;outline-offset:1px}
 #consent[hidden]{display:none!important}
+.hj-stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0 40px }
+.hj-stat { border-top: 1px solid #3A3222; padding-top: 28px }
+.hj-stat-n { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(34px, 3.2vw, 44px); color: #D4A843; line-height: 1; white-space: nowrap }
+@media (max-width: 900px) { .hj-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px 32px } }
+@media (max-width: 520px) { .hj-stats { grid-template-columns: 1fr; gap: 28px } }
 </style>
 <script defer src="/_vercel/insights/script.js"></script>
 </head>
@@ -98,21 +103,21 @@ dialog::backdrop{background:rgba(10,10,10,.78);backdrop-filter:blur(3px)}
 <li style="animation-delay: 1110ms"><span class="hj-sep" aria-hidden="true"></span><span class="hj-dot" aria-hidden="true"></span>Возвращение</li>
 </ol>
 
-<div style="margin-top: 80px; display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 0; border-top: 1px solid #2A261C">
-<div style="padding: 28px 24px 0 0">
-<div style="font-family: 'Playfair Display', Georgia, serif; font-size: 44px; color: #D4A843; line-height: 1">7 часов</div>
+<div class="hj-stats" style="margin-top: 80px">
+<div class="hj-stat">
+<div class="hj-stat-n">7 часов</div>
 <div style="margin-top: 10px; color: #B9B4A8; font-size: 15px">Тренинг на&nbsp;вашей территории. Групповая работа, практикумы, ролевые игры, индивидуальная оценка.</div>
 </div>
-<div style="padding: 28px 24px 0 0">
-<div style="font-family: 'Playfair Display', Georgia, serif; font-size: 44px; color: #D4A843; line-height: 1">60 дней</div>
+<div class="hj-stat">
+<div class="hj-stat-n">60 дней</div>
 <div style="margin-top: 10px; color: #B9B4A8; font-size: 15px">Сопровождение с&nbsp;AI‑ассистентом. Задания, практика, напоминания, прогресс.</div>
 </div>
-<div style="padding: 28px 24px 0 0">
-<div style="font-family: 'Playfair Display', Georgia, serif; font-size: 44px; color: #D4A843; line-height: 1">2 наставника</div>
-<div style="margin-top: 10px; color: #B9B4A8; font-size: 15px">Ваш руководитель продаж, который знает дорогу. И&nbsp;тренер, который прошёл много похожих.</div>
+<div class="hj-stat">
+<div class="hj-stat-n">3 наставника</div>
+<div style="margin-top: 10px; color: #B9B4A8; font-size: 15px">Руководитель, который знает дорогу. Тренер, который приносит метод. И&nbsp;AI‑ассистент, который рядом каждый день.</div>
 </div>
-<div style="padding: 28px 24px 0 0">
-<div style="font-family: 'Playfair Display', Georgia, serif; font-size: 44px; color: #D4A843; line-height: 1">1 отчёт</div>
+<div class="hj-stat">
+<div class="hj-stat-n">1 отчёт</div>
 <div style="margin-top: 10px; color: #B9B4A8; font-size: 15px">«До» и&nbsp;«после». Для&nbsp;собственника, на&nbsp;60‑й день.</div>
 </div>
 </div>
@@ -401,20 +406,26 @@ dialog::backdrop{background:rgba(10,10,10,.78);backdrop-filter:blur(3px)}
 
 <section aria-labelledby="mentors-h" style="padding: 120px 24px; background: #0A0A0A">
 <div style="max-width: 1200px; margin: 0 auto">
-<p style="margin: 0 0 24px; font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; color: #D4A843; font-weight: 600">Два наставника</p>
-<h2 id="mentors-h" style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: clamp(36px, 4.6vw, 62px); line-height: 1.08; max-width: 900px">Один приносит метод. Другой остаётся в пути.</h2>
+<p style="margin: 0 0 24px; font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; color: #D4A843; font-weight: 600">Три наставника</p>
+<h2 id="mentors-h" style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: clamp(36px, 4.6vw, 62px); line-height: 1.08; max-width: 900px">Один приносит метод. Другой остаётся в&nbsp;пути. Третий рядом каждый день.</h2>
 <div style="margin-top: 64px; display: flex; flex-wrap: wrap; gap: 24px">
-<div style="flex: 1 1 400px; border: 1px solid #2A261C; background: #141412; padding: 44px 40px">
+<div style="flex: 1 1 320px; border: 1px solid #2A261C; background: #141412; padding: 44px 40px">
 <p style="margin: 0 0 8px; font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: #D4A843">Внешний наставник</p>
-<h3 style="margin: 0 0 20px; font-family: 'Playfair Display', Georgia, serif; font-size: 34px; font-weight: 600">Тренер</h3>
+<h3 style="margin: 0 0 20px; font-family: 'Playfair Display', Georgia, serif; font-size: 34px; font-weight: 600; line-height: 1.15">Тренер</h3>
 <p style="margin: 0 0 16px; color: #D9D4C8">Эдгарс приходит с методом, взглядом со стороны и инструментами. Он готовит руководителя, ведёт день тренинга и проводит онлайн-разбор.</p>
-<p style="margin: 0; color: #D9D4C8">После тренинга его метод продолжает работать через AI‑ассистента: 60 дней он задаёт неудобные вопросы, разбирает ситуации и напоминает.</p>
+<p style="margin: 0; color: #D9D4C8">Через 4–5 недель он возвращается на&nbsp;часовой онлайн-разбор: победы, уроки из&nbsp;отказов и&nbsp;зависшие сделки команды.</p>
 </div>
-<div style="flex: 1 1 400px; border: 1px solid #2A261C; background: #141412; padding: 44px 40px">
+<div style="flex: 1 1 320px; border: 1px solid #2A261C; background: #141412; padding: 44px 40px">
 <p style="margin: 0 0 8px; font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: #D4A843">Внутренний наставник</p>
-<h3 style="margin: 0 0 20px; font-family: 'Playfair Display', Georgia, serif; font-size: 34px; font-weight: 600">Ваш руководитель продаж</h3>
+<h3 style="margin: 0 0 20px; font-family: 'Playfair Display', Georgia, serif; font-size: 34px; font-weight: 600; line-height: 1.15">Ваш руководитель продаж</h3>
 <p style="margin: 0 0 16px; color: #D9D4C8">Знает ваши продукты, клиентов и людей. До тренинга проходит подготовку, во время него получает настоящую роль, а после — поддержку и еженедельный обзор по команде.</p>
 <p style="margin: 0; color: #D9D4C8">Тот, кто каждый день идёт по этой дороге вместе с командой. Ещё долго после отъезда тренера.</p>
+</div>
+<div style="flex: 1 1 320px; border: 1px solid #2A261C; background: #141412; padding: 44px 40px">
+<p style="margin: 0 0 8px; font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: #D4A843">Ежедневный наставник</p>
+<h3 style="margin: 0 0 20px; font-family: 'Playfair Display', Georgia, serif; font-size: 34px; font-weight: 600; line-height: 1.15">AI‑ассистент</h3>
+<p style="margin: 0 0 16px; color: #D9D4C8">Метод Эдгарса и&nbsp;цель вашей компании&nbsp;— у&nbsp;каждого продавца под рукой. 60 дней он задаёт неудобные вопросы, разбирает каждое «нет» и&nbsp;напоминает о&nbsp;следующем шаге.</p>
+<p style="margin: 0; color: #D9D4C8">Он не&nbsp;заменяет людей. Он держит ритм между встречами, чтобы путь не&nbsp;оборвался к&nbsp;февралю.</p>
 </div>
 </div>
 <div style="margin-top: 24px; border: 1px solid #5A4A22; padding: 44px 40px; display: flex; flex-wrap: wrap; gap: 20px 48px">

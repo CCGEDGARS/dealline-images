@@ -32,6 +32,11 @@ details[open] .faq-plus{transform:rotate(45deg)}
 dialog::backdrop{background:rgba(10,10,10,.78);backdrop-filter:blur(3px)}
 #offer-dialog input:focus,#offer-dialog select:focus{outline:2px solid #D4A843;outline-offset:1px}
 #consent[hidden]{display:none!important}
+.hj-stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0 40px }
+.hj-stat { border-top: 1px solid #3A3222; padding-top: 28px }
+.hj-stat-n { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(34px, 3.2vw, 44px); color: #D4A843; line-height: 1; white-space: nowrap }
+@media (max-width: 900px) { .hj-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px 32px } }
+@media (max-width: 520px) { .hj-stats { grid-template-columns: 1fr; gap: 28px } }
 </style>
 <script defer src="/_vercel/insights/script.js"></script>
 </head>
@@ -67,21 +72,21 @@ dialog::backdrop{background:rgba(10,10,10,.78);backdrop-filter:blur(3px)}
 <a href="#offer" data-offer-open="" style="display: inline-flex; align-items: center; min-height: 54px; padding: 0 30px; background: #BC8F2A; color: #0A0A0A; font-weight: 600; font-size: 17px; text-decoration: none; border-radius: 2px">Request an offer</a>
 <a href="#how" style="display: inline-flex; align-items: center; min-height: 54px; padding: 0 30px; border: 1px solid #5A4A22; color: #F9F8F6; font-weight: 500; font-size: 17px; text-decoration: none; border-radius: 2px">See how it works</a>
 </div>
-<div style="margin-top: 88px; display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 0; border-top: 1px solid #2A261C">
-<div style="padding: 28px 24px 0 0">
-<div style="font-family: 'Playfair Display', Georgia, serif; font-size: 44px; color: #D4A843; line-height: 1">7 hours</div>
+<div class="hj-stats" style="margin-top: 88px">
+<div class="hj-stat">
+<div class="hj-stat-n">7 hours</div>
 <div style="margin-top: 10px; color: #B9B4A8; font-size: 15px">In-house event. Group work, workshops, role-plays, individual assessment.</div>
 </div>
-<div style="padding: 28px 24px 0 0">
-<div style="font-family: 'Playfair Display', Georgia, serif; font-size: 44px; color: #D4A843; line-height: 1">60 days</div>
+<div class="hj-stat">
+<div class="hj-stat-n">60 days</div>
 <div style="margin-top: 10px; color: #B9B4A8; font-size: 15px">AI-guided follow-through. Missions, practice, reminders, progress.</div>
 </div>
-<div style="padding: 28px 24px 0 0">
-<div style="font-family: 'Playfair Display', Georgia, serif; font-size: 44px; color: #D4A843; line-height: 1">2 mentors</div>
-<div style="margin-top: 10px; color: #B9B4A8; font-size: 15px">Your sales manager, who knows the road. And the coach, who has walked many like it.</div>
+<div class="hj-stat">
+<div class="hj-stat-n">3 mentors</div>
+<div style="margin-top: 10px; color: #B9B4A8; font-size: 15px">Your manager, who knows the road. The coach, who brings the method. And an AI assistant, there every day.</div>
 </div>
-<div style="padding: 28px 24px 0 0">
-<div style="font-family: 'Playfair Display', Georgia, serif; font-size: 44px; color: #D4A843; line-height: 1">1 report</div>
+<div class="hj-stat">
+<div class="hj-stat-n">1 report</div>
 <div style="margin-top: 10px; color: #B9B4A8; font-size: 15px">Before and after. For the owner, on day 60.</div>
 </div>
 </div>
@@ -370,20 +375,26 @@ dialog::backdrop{background:rgba(10,10,10,.78);backdrop-filter:blur(3px)}
 
 <section aria-labelledby="mentors-h" style="padding: 120px 24px; background: #0A0A0A">
 <div style="max-width: 1200px; margin: 0 auto">
-<p style="margin: 0 0 24px; font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; color: #D4A843; font-weight: 600">Two mentors</p>
-<h2 id="mentors-h" style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: clamp(36px, 4.6vw, 62px); line-height: 1.08; max-width: 900px">One brings the method. One stays on the road.</h2>
+<p style="margin: 0 0 24px; font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; color: #D4A843; font-weight: 600">Three mentors</p>
+<h2 id="mentors-h" style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: clamp(36px, 4.6vw, 62px); line-height: 1.08; max-width: 900px">One brings the method. One stays on the road. One is there every day.</h2>
 <div style="margin-top: 64px; display: flex; flex-wrap: wrap; gap: 24px">
-<div style="flex: 1 1 400px; border: 1px solid #2A261C; background: #141412; padding: 44px 40px">
+<div style="flex: 1 1 320px; border: 1px solid #2A261C; background: #141412; padding: 44px 40px">
 <p style="margin: 0 0 8px; font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: #D4A843">The outside mentor</p>
-<h3 style="margin: 0 0 20px; font-family: 'Playfair Display', Georgia, serif; font-size: 34px; font-weight: 600">The coach</h3>
+<h3 style="margin: 0 0 20px; font-family: 'Playfair Display', Georgia, serif; font-size: 34px; font-weight: 600; line-height: 1.15">The coach</h3>
 <p style="margin: 0 0 16px; color: #D9D4C8">Edgars arrives with the method, the outside view and the tools. He prepares your manager, leads the day, and runs the online review.</p>
-<p style="margin: 0; color: #D9D4C8">After the event his method keeps working through the AI assistant, which challenges, debriefs and reminds for 60 days.</p>
+<p style="margin: 0; color: #D9D4C8">Four to five weeks later he comes back for a one-hour online review: wins, lessons from rejections and the team&rsquo;s stuck deals.</p>
 </div>
-<div style="flex: 1 1 400px; border: 1px solid #2A261C; background: #141412; padding: 44px 40px">
+<div style="flex: 1 1 320px; border: 1px solid #2A261C; background: #141412; padding: 44px 40px">
 <p style="margin: 0 0 8px; font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: #D4A843">The inside mentor</p>
-<h3 style="margin: 0 0 20px; font-family: 'Playfair Display', Georgia, serif; font-size: 34px; font-weight: 600">Your sales manager</h3>
+<h3 style="margin: 0 0 20px; font-family: 'Playfair Display', Georgia, serif; font-size: 34px; font-weight: 600; line-height: 1.15">Your sales manager</h3>
 <p style="margin: 0 0 16px; color: #D9D4C8">Knows your products, your customers and your people. Prepared before the event, given a real role during it, and supported after it with a weekly view of the team.</p>
 <p style="margin: 0; color: #D9D4C8">The one who walks the road with the team every day. Long after the trainer has gone.</p>
+</div>
+<div style="flex: 1 1 320px; border: 1px solid #2A261C; background: #141412; padding: 44px 40px">
+<p style="margin: 0 0 8px; font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: #D4A843">The everyday mentor</p>
+<h3 style="margin: 0 0 20px; font-family: 'Playfair Display', Georgia, serif; font-size: 34px; font-weight: 600; line-height: 1.15">The AI assistant</h3>
+<p style="margin: 0 0 16px; color: #D9D4C8">Edgars&rsquo; method and your company&rsquo;s goal, at every salesperson&rsquo;s fingertips. For 60 days it asks the uncomfortable questions, debriefs every &ldquo;no&rdquo; and reminds them of the next step.</p>
+<p style="margin: 0; color: #D9D4C8">It does not replace people. It keeps the rhythm between meetings, so the journey does not fade by February.</p>
 </div>
 </div>
 <div style="margin-top: 24px; border: 1px solid #5A4A22; padding: 44px 40px; display: flex; flex-wrap: wrap; gap: 20px 48px">
