@@ -37,6 +37,11 @@ dialog::backdrop{background:rgba(10,10,10,.78);backdrop-filter:blur(3px)}
 .hj-stat-n { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(34px, 3.2vw, 44px); color: #D4A843; line-height: 1; white-space: nowrap }
 @media (max-width: 900px) { .hj-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px 32px } }
 @media (max-width: 520px) { .hj-stats { grid-template-columns: 1fr; gap: 28px } }
+.hj-story { max-width: 1120px; margin: 0 auto; display: grid; grid-template-columns: minmax(0, 360px) minmax(0, 1fr); gap: 72px; align-items: start }
+.hj-story-img { margin: 0 }
+.hj-story-img img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 25%; display: block; height: auto; border: 1px solid #3A3222 }
+.hj-story-text { max-width: 760px }
+@media (max-width: 900px) { .hj-story { grid-template-columns: 1fr; gap: 40px } .hj-story-img { max-width: 240px } }
 </style>
 <script defer src="/_vercel/insights/script.js"></script>
 </head>
@@ -94,7 +99,9 @@ dialog::backdrop{background:rgba(10,10,10,.78);backdrop-filter:blur(3px)}
 </section>
 
 <section aria-labelledby="intro-h" style="padding: 120px 24px; background: #141412; border-top: 1px solid #2A261C; border-bottom: 1px solid #2A261C">
-<div style="max-width: 760px; margin: 0 auto">
+<div class="hj-story">
+<figure class="hj-story-img"><img src="https://hero.ccgroup.lv/edgars-bw.jpg" alt="Edgars Untals" loading="lazy" width="640" height="800"></figure>
+<div class="hj-story-text">
 <p style="margin: 0 0 32px; font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; color: #D4A843; font-weight: 600">Where it all began</p>
 <h2 id="intro-h" style="margin: 0 0 40px; font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: clamp(34px, 4.4vw, 56px); line-height: 1.1">My first week in sales.</h2>
 <div style="font-family: 'Playfair Display', Georgia, serif; font-size: clamp(21px, 2.1vw, 25px); line-height: 1.65; color: #E6E1D6; display: flex; flex-direction: column; gap: 22px">
@@ -109,6 +116,7 @@ dialog::backdrop{background:rgba(10,10,10,.78);backdrop-filter:blur(3px)}
 </div>
 <p style="margin: 56px 0 0; font-family: 'Playfair Display', Georgia, serif; font-size: clamp(26px, 3vw, 36px); line-height: 1.35; color: #D4A843; font-style: italic; border-top: 1px solid #3A3222; padding-top: 40px">Every "no" is part of the story. It's the part where heroes are made.</p>
 <p style="margin: 24px 0 0; color: #B9B4A8; font-size: 15px; letter-spacing: 0.06em">— Edgars Untals</p>
+</div>
 </div>
 </section>
 
