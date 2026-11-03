@@ -38,12 +38,14 @@ dialog::backdrop{background:rgba(10,10,10,.78);backdrop-filter:blur(3px)}
 .hj-stat-n + div { margin-top: 14px !important }
 @media (max-width: 900px) { .hj-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px 32px } }
 @media (max-width: 520px) { .hj-stats { grid-template-columns: 1fr; gap: 28px } }
-.hj-story { max-width: 1120px; margin: 0 auto; display: grid; grid-template-columns: minmax(0, 360px) minmax(0, 1fr); gap: 0 72px; align-items: start }
-.hj-story-img { margin: 0 }
+.hj-story { max-width: 980px; margin: 0 auto }
+.hj-story::after { content: ""; display: block; clear: both }
+.hj-story-img { float: left; width: 320px; margin: 6px 56px 32px 0 }
 .hj-story-img img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 25%; display: block; height: auto; border: 1px solid #3A3222 }
-.hj-story-text { max-width: 760px }
-.hj-story-quote { grid-column: 1 / -1; margin-top: 64px; padding-top: 64px; border-top: 1px solid #3A3222; text-align: center }
-@media (max-width: 900px) { .hj-story { grid-template-columns: 1fr; gap: 40px } .hj-story-img { max-width: 240px } }
+.hj-story-text { max-width: none }
+.hj-story-body > p + p { margin-top: 22px !important }
+.hj-story-quote { clear: both; margin-top: 64px; padding-top: 64px; border-top: 1px solid #3A3222; text-align: center }
+@media (max-width: 760px) { .hj-story-img { float: none; width: 100%; max-width: 240px; margin: 0 0 40px } }
 </style>
 <script defer src="/_vercel/insights/script.js"></script>
 </head>
@@ -106,7 +108,7 @@ dialog::backdrop{background:rgba(10,10,10,.78);backdrop-filter:blur(3px)}
 <div class="hj-story-text">
 <p style="margin: 0 0 32px; font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; color: #D4A843; font-weight: 600">Where it all began</p>
 <h2 id="intro-h" style="margin: 0 0 40px; font-family: 'Playfair Display', Georgia, serif; font-weight: 600; font-size: clamp(34px, 4.4vw, 56px); line-height: 1.1">My first week in sales.</h2>
-<div style="font-family: 'Playfair Display', Georgia, serif; font-size: clamp(21px, 2.1vw, 25px); line-height: 1.65; color: #E6E1D6; display: flex; flex-direction: column; gap: 22px">
+<div class="hj-story-body" style="font-family: 'Playfair Display', Georgia, serif; font-size: clamp(21px, 2.1vw, 25px); line-height: 1.65; color: #E6E1D6">
 <p style="margin: 0">A Swiss pharmaceutical company. A new sales agent. A doctor's office.</p>
 <p style="margin: 0">She threw me out. Told me never to come back.</p>
 <p style="margin: 0; color: #D4A843; font-style: italic">Never.</p>
